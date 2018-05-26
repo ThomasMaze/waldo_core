@@ -6,7 +6,6 @@ from test.TestConstants import *
 from test.bottleTools import given_a_bottle
 
 
-
 class BottleFactoryTestCase(TestCase):
 
     def test_Nominal(self):
