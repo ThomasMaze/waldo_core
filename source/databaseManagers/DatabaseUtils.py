@@ -1,1 +1,1 @@
-databasesPath = '/Users/thomasmazaleyrat/PycharmProjects/waldo/waldo_core/databases_dumps/databases/'
+databasesPath = '~/PycharmProjects/waldo/waldo_core/databases_dumps/databases/'

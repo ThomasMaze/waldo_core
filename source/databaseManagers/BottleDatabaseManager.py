@@ -1,15 +1,13 @@
-import sqlite3
 
 from source.bottle.BottleFactory import BottleFactory
 from source.databaseManagers.DatabaseManager import DatabaseManager
-from source.databaseManagers.DatabaseUtils import *
 
 
 class BottleDatabaseManager(DatabaseManager):
 
     @staticmethod
     def insertBottle(bottle, ):
-        conn = sqlite3.connect(databasesPath + 'BottleDatabase.db')
+        conn = DatabaseManager.connectToBottleDatabase()
 
         currentId = BottleDatabaseManager.getCurrentIdBottle()
         BottleDatabaseManager.incrementCurrentIdBottle()
@@ -22,7 +20,7 @@ class BottleDatabaseManager(DatabaseManager):
 
     @staticmethod
     def listBottle():
-        conn = sqlite3.connect(databasesPath + 'BottleDatabase.db')
+        conn = DatabaseManager.connectToBottleDatabase()
         query = "SELECT * FROM bottle;"
         cursor = conn.execute(query)
 
@@ -37,7 +35,7 @@ class BottleDatabaseManager(DatabaseManager):
 
     @staticmethod
     def getCurrentIdBottle():
-        conn = sqlite3.connect(databasesPath + 'BottleDatabase.db')
+        conn = DatabaseManager.connectToBottleDatabase()
         query = "SELECT cnt FROM currentId WHERE id=1;"
         cursor = conn.execute(query)
         currentId = cursor.fetchall()[0][0]
@@ -48,7 +46,7 @@ class BottleDatabaseManager(DatabaseManager):
 
     @staticmethod
     def incrementCurrentIdBottle():
-        conn = sqlite3.connect(databasesPath + 'BottleDatabase.db')
+        conn = DatabaseManager.connectToBottleDatabase()
         currentId = BottleDatabaseManager.getCurrentIdBottle()
         query = "UPDATE currentId SET cnt = {0} WHERE id=1;".format(currentId + 1)
         conn.execute(query)

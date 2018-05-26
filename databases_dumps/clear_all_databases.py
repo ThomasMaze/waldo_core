@@ -6,7 +6,7 @@ from source.databaseManagers.DatabaseUtils import databasesPath
 print('Connecting to DB...')
 connToBottleDB = sqlite3.connect(databasesPath + 'BottleDatabase.db')
 
-scriptFile = open('/Users/thomasmazaleyrat/PycharmProjects/waldo/waldo_core/databases_dumps/bottle_database_create.sql', 'r')
+scriptFile = open('~/PycharmProjects/waldo/waldo_core/databases_dumps/bottle_database_create.sql', 'r')
 script = scriptFile.read()
 scriptFile.close()
 
