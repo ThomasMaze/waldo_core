@@ -5,7 +5,7 @@ class Bottle(object):
     price = None
 
     def __eq__(self, other):
-        self.name = other.name
-        self.vintage = other.vintage
-        self.type = other.type
-        self.price = other.price
+        return self.name == other.name and \
+               self.vintage == other.vintage and \
+               self.type == other.type and \
+               self.price == other.price
