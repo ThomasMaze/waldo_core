@@ -1,1 +1,0 @@
-databasesPath = '~/PycharmProjects/waldo/waldo_core/databases_dumps/databases/'
