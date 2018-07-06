@@ -10,4 +10,3 @@ waldoApi.add_resource(List, '/bottle/list')
 
 if __name__ == '__main__':
     waldo.run(port=5000, debug=True)
-
