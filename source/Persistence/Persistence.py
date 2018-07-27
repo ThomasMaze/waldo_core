@@ -8,4 +8,10 @@ class Persistence(object):
 
         return fileContent
 
+    @staticmethod
+    def addBottle(name):
+        file = open("/home/tmazaleyrat/PycharmProjects/waldo/waldo_core/persistency/bottle_persistency", "a")
+        file.write(name + '\n')
+        file.close()
+
 
