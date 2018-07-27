@@ -11,11 +11,11 @@ class CreateBottleTestCase(TestCase):
         file.close()
 
     def test_Route(self):
-        response = WSCall.createBottle("", -1)
+        response = WSCall.createBottle("")
         self.assertEqual(200, response.status_code)
 
     def test_ValidParameters(self):
-        response = WSCall.createBottle("persevero", 2017)
+        response = WSCall.createBottle("persevero")
 
         self.assertEqual(response.json()['status'], 'success')
         self.assertEqual(['persevero'], Persistence.getBottleList())
@@ -23,7 +23,7 @@ class CreateBottleTestCase(TestCase):
     def test_TooLongName(self):
         tooLongBottleName = "IamATooLongBottleName------------------------"
 
-        response = WSCall.createBottle(tooLongBottleName, 2017)
+        response = WSCall.createBottle(tooLongBottleName)
         self.assertEqual(response.json()['status'], 'failure')
         self.assertEqual(response.json()['message'], " - invalid value for parameter 'name'")
 
